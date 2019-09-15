@@ -293,6 +293,11 @@ slider.oninput = function() {
             <div class="card-header border-0">
               <h3 class="mb-0">Scatter Chart</h3>
 
+
+
+
+              <script>
+              </script>
               <div class="dropdown">
                   <button class="btn btn-primary my-4 dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Select Company
@@ -306,8 +311,8 @@ slider.oninput = function() {
                     <a class="dropdown-item" onclick="loadMLdata('longos','1')" href="#">Longos</a>
                     <a class="dropdown-item" onclick="loadMLdata('hm','1')" href="#">H&M</a>
                     <a class="dropdown-item" onclick="loadMLdata('netflix','1')" href="#">Netflix</a>
-                    <a class="dropdown-item" onclick="loadMLdata('timhortons','1')" href="#">Tim Hortons</a>
-                    <a class="dropdown-item" onclick="loadMLdata('mcdonalds','1')" href="#">McDonalods</a>
+                    <a class="dropdown-item" onclick="loadMLdata('lcbo','1')" href="#">LCBO</a>
+                    <a class="dropdown-item" onclick="loadMLdata('mcdonalds','1')" href="#">McDonald's</a>
                     
                   </div>
                 </div>
@@ -320,6 +325,8 @@ slider.oninput = function() {
               
               
               <p id="demo"></p>
+
+              
               
                   </div>
 
@@ -481,8 +488,25 @@ slider.oninput = function() {
             
                 xhttp.open("POST",con_site,true);
                 xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-                xhttp.send("name=" + parameter);
-            
+                xhttp.send("name=" + parameter);      
+
+                var actual;
+                switch(parameter){
+                  case 'starbucks':  actual = 'Starbucks'; break;
+                  case 'timhortons': actual = 'Tim Hortons';break;
+                  case 'swisschalet': actual = 'Swiss Chalet';break;
+                  case 'longos': actual = 'Longos'; break;
+                  case 'hm': actual = 'H&M'; break;
+                  case 'netflix': actual = 'Netflix'; break;
+                  case 'lcbo': actual = 'LCBO'; break;
+                  case 'mcdonalds': actual = "McDonald's";break;
+
+
+
+                  default: actual = 'Select Company';
+                }
+                
+                document.getElementById("dropdownMenuButton").innerHTML= actual;
                 }
             
             
