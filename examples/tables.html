@@ -297,12 +297,18 @@ slider.oninput = function() {
                   <button class="btn btn-primary my-4 dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Select Company
                   </button>
-                  <button type="button" class="btn btn-primary my-4" onclick="loadMLdata()">Try it</button>
+                  <button type="button" class="btn btn-primary my-4" onclick="loadMLdata('lcbo','0')">Try it</button>
 
                   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="#">Starbucks</a>
-                    <a class="dropdown-item" href="#">Tim Hortons</a>
-                    <a class="dropdown-item" href="#">LCBO</a>
+                    <a class="dropdown-item" onclick="loadMLdata('starbucks','1')" href="#">Starbucks</a>
+                    <a class="dropdown-item" onclick="loadMLdata('timhortons','1')" href="#">Tim Hortons</a>
+                    <a class="dropdown-item" onclick="loadMLdata('swisschalet','1')" href="#">Swiss Chalet</a>
+                    <a class="dropdown-item" onclick="loadMLdata('longos','1')" href="#">Longos</a>
+                    <a class="dropdown-item" onclick="loadMLdata('hm','1')" href="#">H&M</a>
+                    <a class="dropdown-item" onclick="loadMLdata('netflix','1')" href="#">Netflix</a>
+                    <a class="dropdown-item" onclick="loadMLdata('timhortons','1')" href="#">Tim Hortons</a>
+                    <a class="dropdown-item" onclick="loadMLdata('mcdonalds','1')" href="#">McDonalods</a>
+                    
                   </div>
                 </div>
                 <div id="chart">
@@ -331,114 +337,119 @@ slider.oninput = function() {
                 var c3 = [];
                 var c4 = [];
             
+
+                function update_map_sb(param){
+
+
+                }
             
             
             //for mcdonald only 
-            function cluster3_find(hi){
+            // function cluster3_find(hi){
             
-            var final = [];
+            // var final = [];
             
-            const cluster1 = "Cluster 1: Low income customers";
-            const cluster2 = "Cluster 2: High income customers";
-            const cluster3 = "Cluster 3: Average income customers";
-            const cluster4 = "Cluster 4: Above average income customers";
-                for(var i = 0;i < hi.length;i++){
-                    var text = [];
-                    var cluster = hi[i].cluster;
-                    if(cluster.localeCompare("Cluster 4: Above average income customers") == 0){
+            // const cluster1 = "Cluster 1: Low income customers";
+            // const cluster2 = "Cluster 2: High income customers";
+            // const cluster3 = "Cluster 3: Average income customers";
+            // const cluster4 = "Cluster 4: Above average income customers";
+            //     for(var i = 0;i < hi.length;i++){
+            //         var text = [];
+            //         var cluster = hi[i].cluster;
+            //         if(cluster.localeCompare("Cluster 4: Above average income customers") == 0){
             
-                    text.push(hi[i].totalIncome);
-                    text.push(hi[i].currencyAmount);
-                    final.push(text);
+            //         text.push(hi[i].totalIncome);
+            //         text.push(hi[i].currencyAmount);
+            //         final.push(text);
                     
-                    }
+            //         }
             
-                }	
+            //     }	
                 
             
-            return final;
+            // return final;
             
             
-            } 
+            // } 
             
-               function cluster4_find(hi){
+            //    function cluster4_find(hi){
             
-            var final = [];
+            // var final = [];
             
-            const cluster1 = "Cluster 1: Low income customers";
-            const cluster2 = "Cluster 2: High income customers";
-            const cluster3 = "Cluster 3: Average income customers";
-            const cluster4 = "Cluster 4: Above average income customers";
-                for(var i = 0;i < hi.length;i++){
-                    var text = [];
-                    var cluster = hi[i].cluster;
-                    if(cluster.localeCompare("Cluster 3: Average income customers") == 0){
+            // const cluster1 = "Cluster 1: Low income customers";
+            // const cluster2 = "Cluster 2: High income customers";
+            // const cluster3 = "Cluster 3: Average income customers";
+            // const cluster4 = "Cluster 4: Above average income customers";
+            //     for(var i = 0;i < hi.length;i++){
+            //         var text = [];
+            //         var cluster = hi[i].cluster;
+            //         if(cluster.localeCompare("Cluster 3: Average income customers") == 0){
             
-                    text.push(hi[i].totalIncome);
-                    text.push(hi[i].currencyAmount);
-                    final.push(text);
+            //         text.push(hi[i].totalIncome);
+            //         text.push(hi[i].currencyAmount);
+            //         final.push(text);
                     
-                    }
+            //         }
             
-                }	
+            //     }	
                 
             
-            return final;
+            // return final;
             
             
-            } 
+            // } 
             
             
-              function cluster2_find(hi){
+            //   function cluster2_find(hi){
             
-              var final = [];
+            //   var final = [];
             
-              const cluster1 = "Cluster 1: Low income customers";
-              const cluster2 = "Cluster 2: High income customers";
-              const cluster3 = "Cluster 3: Average income customers";
+            //   const cluster1 = "Cluster 1: Low income customers";
+            //   const cluster2 = "Cluster 2: High income customers";
+            //   const cluster3 = "Cluster 3: Average income customers";
               
-                for(var i = 0;i < hi.length;i++){
-                        var text = [];
-                  var cluster = hi[i].cluster;
-                  if(cluster.localeCompare("Cluster 2: High income customers") == 0){
+            //     for(var i = 0;i < hi.length;i++){
+            //             var text = [];
+            //       var cluster = hi[i].cluster;
+            //       if(cluster.localeCompare("Cluster 2: High income customers") == 0){
               
-                  text.push(hi[i].totalIncome);
-                  text.push(hi[i].currencyAmount);
-                  final.push(text);
+            //       text.push(hi[i].totalIncome);
+            //       text.push(hi[i].currencyAmount);
+            //       final.push(text);
                   
-                  }
+            //       }
             
-                }	
+            //     }	
                 
             
-              return final;
+            //   return final;
             
             
-              } 
+            //   } 
                
-              function cluster1_find(hi){
-              var final = [];
+            //   function cluster1_find(hi){
+            //   var final = [];
             
-              const cluster1 = "Cluster 1: Low income customers";
-              const cluster2 = "Cluster 2: High income customers";
-              const cluster3 = "Cluster 3: Average income customers";
+            //   const cluster1 = "Cluster 1: Low income customers";
+            //   const cluster2 = "Cluster 2: High income customers";
+            //   const cluster3 = "Cluster 3: Average income customers";
               
-                for(var i = 0;i < hi.length;i++){
-                        var text = [];
-                  var cluster = hi[i].cluster;
-                  if(cluster.localeCompare("Cluster 1: Low income customers") == 0){
+            //     for(var i = 0;i < hi.length;i++){
+            //             var text = [];
+            //       var cluster = hi[i].cluster;
+            //       if(cluster.localeCompare("Cluster 1: Low income customers") == 0){
               
-                  text.push(hi[i].totalIncome);
-                  text.push(hi[i].currencyAmount);
-                  final.push(text);
+            //       text.push(hi[i].totalIncome);
+            //       text.push(hi[i].currencyAmount);
+            //       final.push(text);
                   
-                  }
+            //       }
             
-                }	
+            //     }	
                 
             
-              return final;
-               }
+            //   return final;
+            //    }
             
                
               var returned_data;
@@ -449,7 +460,7 @@ slider.oninput = function() {
             
                       //ajax portion
                 
-                function loadMLdata() {
+                function loadMLdata(parameter,msg) {
                 var con_site = "http://lngmgtest.azurewebsites.net/api/users/graph";
                 var xhttp = new XMLHttpRequest();
               var test = [];
@@ -460,7 +471,7 @@ slider.oninput = function() {
                 returned_data = xhttp.responseText;
                 //callback.apply(this,[returned_data]);
                 //console.log(x);
-                execute(returned_data);
+                execute(returned_data,msg);
                 
                     }else{
                 
@@ -470,14 +481,14 @@ slider.oninput = function() {
             
                 xhttp.open("POST",con_site,true);
                 xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-                xhttp.send("name=lcbo");
+                xhttp.send("name=" + parameter);
             
                 }
             
             
             
               
-              function execute(intput){
+              function execute(intput,msg){
               
                   console.log(intput);
                   
@@ -523,7 +534,7 @@ slider.oninput = function() {
                 })
                 
 
-                 
+               if(msg == 0){
               var options = {
                         chart: {
                             height: 350,
@@ -555,7 +566,39 @@ slider.oninput = function() {
             
             
               chart.render();
-              
+                  } else{
+                    var options = {
+                        chart: {
+                            height: 350,
+                            type: 'scatter',
+                            zoom: {
+                                enabled: true,
+                                type: 'xy'
+                            }
+                        },
+                        
+                        series: graphInfo,
+                        xaxis: {
+                            tickAmount: 10,
+                            labels: {
+                                formatter: function(val) {
+                                    return parseFloat(val).toFixed(1)
+                                }
+                            }
+                        },
+                        yaxis: {
+                            tickAmount: 7
+                        }
+                    }
+                      
+                      var chart = new ApexCharts(
+                        document.querySelector("#chart"),
+                        options
+                    );
+                    
+                      chart.render(graphInfo);
+                    
+                  }              
               
               
               }
